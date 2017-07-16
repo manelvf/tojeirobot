@@ -11,10 +11,7 @@ from BeautifulSoup import BeautifulSoup
 from config import TWITTER, PHRASES_FILE
 
 
-def twitter_login(config_file):
-    with open(config_file) as f:
-        config = json.load(f)
-
+def twitter_login():
     return Twitter(auth=OAuth(
         TWITTER["token"],
         TWITTER["token_key"],
@@ -45,4 +42,4 @@ def tweet(t):
 
 
 if __name__ == "__main__":
-    tweet(twitter_login)
+    tweet(twitter_login())
